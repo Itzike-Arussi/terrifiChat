@@ -1,0 +1,92 @@
+
+<!--⚡ Main background img -->
+<img id="mainBG"src="..\..\assets\icons\backgroundTerrific.png">
+
+<!--⚡ Open / Close chat BT -->
+<img id="open-Chat-Button"src="..\..\assets\icons\giphy (41).gif" (click)="onChatFrameOpen(chatMainFrame)">
+<img id="close-Chat-Button"src="..\..\assets\icons\close (7).png" (click)="onChatFrameClose(chatMainFrame)">
+
+<!--⚡ Open / Close chat BT toolTip-->
+<div id="openClose-Chat-Button-TT">
+    <h1 id="openClose-Chat-Button-TT-text">Join live chat and discuss with other buyers.</h1>
+</div>
+
+<!--⚡ chat - main-frame -->
+<div id="chat-mainFrame" #chatMainFrame> 
+
+    
+<!--⚡ header -->
+<div id="chat-mainFrame-header">
+    <a id="chat-mainFrame-header-textLogo">C</a>
+    <a id="chat-mainFrame-header-textLogo2">hat</a>
+    <div id="chat-mainFrame-header-triangular"></div>
+    <img id="chat-mainFrame-header-background"src="..\..\assets\icons\chat.png">
+    <img style="position: absolute; height: 51px; left: 116px; top: 21px;" src="..\..\assets\icons\Capture-removebg-preview.png" alt="">
+</div>
+
+
+<!--⚡ body -->
+<div id="chat-mainFrame-body" #scrollMe style="overflow: auto; height: xyz; overflow-x: hidden;">
+    <div id="chat-mainFrame-body-msgBodyFrame">
+        <input style="display: none;" type="text" value= {{userName}} >
+        <div *ngFor="let item of dataSource">
+          <div  [ngClass]="{'msgBubbleSenders': item.name === userName, 'msgBubble': item.name != userName}">
+          
+                <!-- reply message -->
+                <div *ngIf="item.nameReplyed!" [ngClass]="{'chat-mainFrame-body-nameReplyed-Senders': item.name === userName, 'chat-mainFrame-body-nameReplyed': item.name != userName}">
+                    <div  class="chat-mainFrame-body-userNameReplyed" style="position: absolute; left: 27px; top: 9px;">{{ item.nameReplyed }}</div>
+                    <div  class="chat-mainFrame-body-msgReplyed">{{ item.msgReplyed }}</div>
+                    <div  [ngClass]="{'chat-mainFrame-body-msgReplyed-triangular-Senders': item.name === userName, 'chat-mainFrame-body-msgReplyed-triangular': item.name != userName}"></div>
+                    <img #replyAreaImg style="    position: absolute; top: 5px; height: 20px;  border-radius: 50%;" [src]= item.imgReplyed>
+                </div>
+
+                    <div #msg>{{ item.message }}</div>
+                    <div #sendersName [ngClass]="{'msgBubble-userName-Senders': item.name === userName, 'msgBubble-userName': item.name != userName}" >{{ item.name }}</div>
+                    <img #sendersImg  [ngClass]="{'msgBubble-userImg-Senders':  item.name === userName, 'msgBubble-userImg': item.name != userName}" [src]= item.photo>
+                    <a class="messageTime">{{item.timeForDisplay}}</a>
+                    <div [ngClass]="{'msgBubble-triangular-Senders': item.name === userName, 'msgBubble-triangular': item.name != userName}"  class="msgBubble-triangular"></div>
+                
+                <!-- reply BT -->
+                <div [ngClass]="{'msgBubble-replyBT-container-Senders': item.name === userName, 'msgBubble-replyBT-container': item.name != userName}"  >
+                    <img  class="msgBubble-replyBT" src="..\..\assets\icons\arrow-right.png" (click)="onRepkyBTclicked(sendersName, msg, sendersImg, $event)">
+                    <div class="msgBubble-replyBT-toolTip">Reply
+                        <div class="msgBubble-replyBT-toolTip-triangular"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--⚡ footer -->
+    <div id="chat-mainFrame-footer">
+        <input  #inputMessage (keyup.enter)="add(inputMessage.value)" [(ngModel)]="message" (keyup)="checkValidition()"  id="chat-mainFrame-footer-input" type="text" placeholder="Add your message here...">
+        <img id="chat-mainFrame-footer-sendBT" (click)="add(inputMessage.value)" src="..\..\assets\icons\send (10).png">
+        <div id="chat-mainFrame-footer-textRequired">* Text required.</div>
+            <!-- reply Area -->
+            <div id="chat-mainFrame-footer-replyArea" [style.background]="replyAreaBG">
+                <input  type="text" id="replyArea-name" value={{replyAreaName}}>
+                <input  type="text" id="replyArea-msg" value= {{replyAreaMsg}}>
+                <img  id="replyArea-img"  src= {{replyAreaImg}}> 
+                <img title="Unpin" id="replyArea-msg-closeBT" (click)="onCancleReply()" src="..\..\assets\icons\no-entry.png">
+            </div>
+    </div>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

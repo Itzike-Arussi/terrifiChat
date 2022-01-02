@@ -1,0 +1,29 @@
+
+<!------⚡ login frame------ -->
+<div id="loginFrame">Please <a (click)="onLoginWithGoogle()" style="text-decoration: underline; color: blue;  cursor: pointer;" >Click here</a>  for login with Google.
+  <img id="loginFrame-icon"src="..\..\assets\icons\google.png">
+  <div id="loginFrame-closeBT" (click)="onCloseLoginWithGoogle()">X</div>
+</div>
+
+
+
+
+<!------⚡ logout frame------ -->
+<div id="logoutFrame">
+  <div id="logoutFrame-container">
+    <img class="logoutFrame-iconsAnimat" id="logoutFrame-iconAnimat" src="..\..\assets\icons\giphy (44).gif">
+    <img class="logoutFrame-iconsAnimat" id="logoutFrame-iconAnimat2" src="..\..\assets\icons\giphy (45).gif">
+    <img class="logoutFrame-userImg"  src= {{userImg}}>
+    <img id="logoutFrame-userImg-V" src="..\..\assets\icons\check (1).png">
+
+      <div id="logoutFrame-userImg-toolTip">
+        <img id="logoutFrame-icon" src="..\..\assets\icons\google.png">
+          <img class="logoutFrame-userImg" style="height: 54px;left: 5px;top: 13px;left: 8px;"  src= {{userImg}}>
+          <a id="logoutFrame-title1"> {{ uName }}</a>
+          <a id="logoutFrame-title2" > <a (click)="onsignOut()" style="color: red; text-decoration-line: underline; cursor: pointer;">Click here</a> for Sign out.</a>
+          <div id="logoutFrame-userImg-toolTip-triangular"></div>
+      </div>
+  </div>
+</div>
+
+  

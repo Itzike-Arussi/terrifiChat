@@ -1,0 +1,149 @@
+//⚡ ------------------------Login frame------------------------⚡
+#loginFrame{
+    position: absolute;
+    top: 58px;
+    left: 7.6%;
+    height: 59px;
+    line-height: 57px;
+    padding-left: 51px;
+    font-size: 17px;
+    width: 325px;
+    z-index: 3;
+    color: black;
+    border-bottom-right-radius: 36px;
+    text-shadow: 0 0 20px #000000c9;
+    background-color: #ffffff;
+    box-shadow: 0 0 0px black;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.28) -3px -3px 6px 0px inset;
+  }
+  #loginFrame-icon{
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    height: 33px;
+  }
+  #loginFrame-closeBT{
+    position: absolute;
+    height: 21px;
+    width: 21px;
+    right: 12px;
+    line-height: 22px;
+    top: 4px;
+    color: red;
+    border-radius: 50%;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 0 16px #00000057;
+    cursor: pointer;
+  
+  }
+
+
+
+
+//⚡ ------------------------Logout frame------------------------⚡
+ #logoutFrame{
+  position: fixed;
+  top: 18%;
+  left: 7%;
+  visibility: visible;
+  z-index: 50;
+  height: 18%;
+  width: 30%;
+  display: none;
+  transition: all 0.4s ease-in-out;
+  height: 66.5%;
+  width: 377px;
+  z-index: 5;
+  pointer-events: none;
+ } 
+ #logoutFrame-container{
+  position: absolute;
+  right: 0px;
+  top: -55px;
+  width: 75px;
+  height: 51px;
+  pointer-events: initial;
+ }
+ #logoutFrame-container:hover > #logoutFrame-userImg-toolTip{
+  display: initial;
+  }
+.logoutFrame-userImg{
+  position: absolute;
+  height: 33px;
+  right: 25px;
+  border-radius: 50%;
+  border: 3px solid #f6f6f6;
+  cursor: pointer;
+}
+#logoutFrame-userImg-V{
+  position: absolute;
+  height: 14px;
+  right: 21px;
+  top: -1px;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+}
+#logoutFrame-userImg-toolTip{
+  position: absolute;
+  top: 47px;
+  right: 20px;
+  height: 92px;
+  width: 226px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  padding-top: 30px;
+  line-height: 17px;
+  padding-left: 19px;
+  font-size: 14px;
+  box-shadow: 0 0 5px #00000078;
+  display: none;
+}
+#logoutFrame-userImg-toolTip-triangular{
+  position: absolute;
+  top: -5px;
+  right: 11px;
+  transform: rotate(305deg);
+  border: 8px solid #22080800;
+  border-top: 16px solid #fdfdfd;
+}
+#logoutFrame-icon{
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  height: 22px;
+}
+.logoutFrame-iconsAnimat{
+  position: absolute;
+  left: -4px;
+  top: -13px;
+  visibility: hidden;
+}
+#logoutFrame-iconAnimat{
+  height: 66px;
+}
+#logoutFrame-iconAnimat2{
+  height: 59px;
+  left: 1px;
+  top: -10px;
+  border-radius: 50%;
+}
+#logoutFrame-title1{
+  position: absolute;
+  top: 37px;
+  left: 73px;
+  color: blue;
+  font-size: 19px;
+}
+#logoutFrame-title2{
+  position: absolute;
+  bottom: 12px;
+  left: 50px;
+  font-size: 15px;
+}
+
